@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "page/home/index",
+    "page/home/detail",
+    "page/home/modify"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTextStyle": "white", 
+    "navigationBarTitleText": "记车位"
+    
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "为了更精确的定位，即将获取您的位置"
+    }
+  },
+  
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

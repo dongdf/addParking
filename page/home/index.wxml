@@ -1,0 +1,113 @@
+<!--page/home/index.wxml-->
+ 
+  
+ 
+  <map
+    id="map"
+    longitude="{{mylng}}"
+    latitude="{{mylat}}"
+    scale="18"
+    show-location
+    show-compass
+    style="width: 100%; position:fixed; top:0;left:0; z-index:1; height:100%;"
+  ></map>
+
+
+ <cover-view class='repointer' style='top:{{rey}}' bindtap='autopointer'>
+           <cover-image class='mpico repointerimg'  mode="widthFix" src='../../image/mpointe.png'></cover-image>
+ </cover-view>
+
+  <cover-view class="recordfixed {{mylist.length == 0?'wxhide':'wxshow'}}">
+     <cover-view class="recordItem" >
+          <cover-view class='rowp' bindtap='opendetail' data-pointer="{{item}}"  wx:for="{{mylist}}" wx:for-index="index" wx:for-item="item" style='background:none;'>
+             <cover-view class='col col-20'><cover-image class='mpicopp' mode="widthFix" src='../../image/cars.png'></cover-image></cover-view>
+             <cover-view class='col col-80' >
+                <cover-view class='parkInfo'>
+                  <cover-view class='park_adr' style='padding-right:120px;'>{{item.title}}</cover-view>
+                  <cover-view class='park_time'>{{item.create_time}}</cover-view>
+                </cover-view>
+             </cover-view>
+             <cover-view class='go_c'>
+                  <cover-view class='col tcol' bindtap='opendetail' data-pointer="{{item}}"><cover-image class='t1s' src="../../image/sharei.png"></cover-image><cover-view class="stexts">共享</cover-view></cover-view>
+                  <cover-view class='col tcol' bindtap='openmap' data-pointer="{{item}}"><cover-image  class='t1s' src="../../image/goadr.png"></cover-image><cover-view  class="stexts">去这里</cover-view></cover-view>
+             </cover-view>
+             <cover-view class='cl'></cover-view>
+          </cover-view>
+     </cover-view>
+  </cover-view>
+
+
+
+  
+<view class='amap_c' style="top:{{mheight}}">
+    <cover-view class="amap_add {{showji?'wxshow':'wxhide'}}">
+      <cover-view class='additem'>
+        <cover-view class='rowp' style='border-bottom:1px solid #EEE'>
+         <cover-view class="col col-5"><cover-image class='mpico' mode="widthFix" src='../../image/mpointe2.png'></cover-image></cover-view>
+         <cover-view class="col col-90"> <cover-view style='padding-right:40px;'>{{adrinfo.rec}}</cover-view></cover-view>
+         <cover-view class="remark" bindtap='gomodi'>修改备注</cover-view>
+         <cover-view class='cl'></cover-view>
+        </cover-view>
+
+        <cover-view class='rowp'>
+        <cover-view class="col col-20" wx:for="{{imgList}}" wx:for-index="index" wx:for-item="item">
+            <cover-image mode='scaleToFill' style='width:60px;' class='upic' src='{{item.img}}'></cover-image>
+        </cover-view>
+         <cover-view class="col col-20">
+             <cover-view class='iccanmar' bindtap='uploadpic'>
+              <cover-view class='ic'>
+                <cover-image  class="acmicon" mode="widthFix" src='../../image/ca.png'></cover-image>
+             </cover-view>
+             <cover-view class='cl'></cover-view>
+               <cover-view class='ictext'>
+               拍照记录 
+             </cover-view>
+             </cover-view>
+         </cover-view>
+         
+         <cover-view class='cl'></cover-view>
+        </cover-view>
+
+        <cover-view class='rowp' >
+         <cover-view class="col col-100">
+              <cover-view><button class="adbtn" bindtap='addCard' plain="true">记录位置</button></cover-view>
+              <!-- <cover-view class="hisb">历史记录</cover-view> -->
+         </cover-view>
+         
+         <cover-view class='cl'></cover-view>
+        </cover-view>
+
+
+     </cover-view>
+    </cover-view>
+
+
+
+    <cover-view class="amap_add {{showji?'wxhide':'wxshow'}}">
+      <cover-view class='additem'>
+       
+        <cover-view class='alinfo'>
+            <cover-image  class="acmicon" style='width:60px; border-radius:1000px;' mode="widthFix" src='../../image/jilogo.png'></cover-image>
+        </cover-view>
+        
+          <cover-view class="alinfo">
+          记车位获取微信用户信息
+          </cover-view>
+        
+
+        <cover-view class='rowp' >
+         <cover-view class="col col-100">
+              <cover-view><button class="adbtn" open-type="getUserInfo" bindgetuserinfo='bindGetUserInfo' plain="true">允许获取用户信息</button></cover-view>
+              <!-- <cover-view class="hisb">历史记录</cover-view> -->
+         </cover-view>
+         
+         <cover-view class='cl'></cover-view>
+        </cover-view>
+
+
+     </cover-view>
+    </cover-view>
+    
+</view>
+
+

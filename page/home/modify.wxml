@@ -1,0 +1,8 @@
+<!--page/home/modify.wxml-->
+<view class="mo">
+<form bindsubmit="backpage">
+
+   <view class='mo_box'><textarea name="rename" placeholder='请输入备注' value="{{recText}}"></textarea ></view>
+   <view class="mo_act_co"><button   class="adbtn" form-type='submit'  plain="true">确定</button></view>
+</form>
+</view>

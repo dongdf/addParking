@@ -1,0 +1,53 @@
+<!--page/home/detail.wxml-->
+ <view class='dviews'>
+  <map
+    id="map"
+    longitude="{{mylng}}"
+    latitude="{{mylat}}"
+    markers="{{markers}}"
+    scale="18"
+    show-location
+    show-compass
+    style="width: 100%; height:{{mheight}}"
+  ></map>
+  
+  <view  class="t_d_view">
+      <view   style=''>
+          <view  class='rowp' style='background:none;'>
+             <view  class='col col-20'>
+
+            <cover-image class="mpicopp {{curimg?'wxshow':'wxhide'}}" bindtap='pvimg' mode="widthFix" src='{{curimg}}'></cover-image>
+             <cover-image class="mpicopp {{curimg?'wxhide':'wxshow'}}" mode="widthFix" src='../../image/cars.png'></cover-image>
+             
+             </view >
+             <view  class='col col-80'>
+                <view  class='parkInfo'>
+                  <view  class='park_adr' style=''>{{parkInfo.title}}</view >
+                  <view  class='park_time'>{{parkInfo.address}}</view >
+                  <view  class='park_time'>{{parkInfo.create_time}}</view >
+                </view >
+             </view >
+          </view >
+          <view  class='cl'> </view >
+           <view  class='mtms'>
+            <view  class='ils '><button open-type="share" class="sharebtn">共享信息</button><cover-image class='t1s' src="../../image/sharei.png"></cover-image><view  class="stexts">共享</view ></view >
+            <view  class='ils ' bindtap='gopark'><cover-image  class='t1s' src="../../image/goadr.png"></cover-image><view   class="stexts">去这里</view ></view >
+            <view  class="ils {{(mine.open_id == parkInfo.open_id)?'wxshow':'wxhide'}}" bindtap='delpark'><cover-image  class='t1s' src="../../image/dels.png"></cover-image><view   class="stexts">删除</view ></view >
+            <view  class='ils ' bindtap='gohome'><cover-image  class='t1s' src="../../image/homes.png"></cover-image><view   class="stexts">首页</view ></view >
+            <view  class='cl'> </view >
+           </view >
+              
+          
+     </view >
+  
+  </view >
+
+
+    
+
+
+  </view>
+
+  <!-- <view class="oinfo">12344</view> -->
+
+
