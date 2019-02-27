@@ -2,8 +2,8 @@
  <view class='dviews'>
   <map
     id="map"
-    longitude="{{mylng}}"
-    latitude="{{mylat}}"
+    longitude="{{parkInfo.address_Lng}}"
+    latitude="{{parkInfo.address_Lat}}"
     markers="{{markers}}"
     scale="18"
     show-location
@@ -30,10 +30,10 @@
           </view >
           <view  class='cl'> </view >
            <view  class='mtms'>
-            <view  class='ils '><button open-type="share" class="sharebtn">共享信息</button><cover-image class='t1s' src="../../image/sharei.png"></cover-image><view  class="stexts">共享</view ></view >
-            <view  class='ils ' bindtap='gopark'><cover-image  class='t1s' src="../../image/goadr.png"></cover-image><view   class="stexts">去这里</view ></view >
-            <view  class="ils {{(mine.open_id == parkInfo.open_id)?'wxshow':'wxhide'}}" bindtap='delpark'><cover-image  class='t1s' src="../../image/dels.png"></cover-image><view   class="stexts">删除</view ></view >
-            <view  class='ils ' bindtap='gohome'><cover-image  class='t1s' src="../../image/homes.png"></cover-image><view   class="stexts">首页</view ></view >
+            <view  class='ils '><button open-type="share" class="sharebtn">共享信息</button><image class='t1s' mode="widthFix"  src="../../image/sharei.png"></image><view  class="stexts">共享</view ></view >
+            <view  class='ils ' bindtap='gopark'><image  mode="widthFix"  class='t1s' src="../../image/goadr.png"></image><view   class="stexts">去这里</view ></view >
+            <view  class="ils {{(mine.open_id == parkInfo.open_id)?'wxshow':'wxhide'}}" bindtap='delpark'><image   mode="widthFix" class='t1s' src="../../image/dels.png"></image><view   class="stexts">删除</view ></view >
+            <view  class='ils ' bindtap='gohome'><image  class='t1s'  mode="widthFix" src="../../image/homes.png"></image><view   class="stexts">首页</view ></view >
             <view  class='cl'> </view >
            </view >
               

@@ -308,5 +308,30 @@ Page({
   },
   controltap(e) {
     console.log(e.controlId)
-  }
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function (res) {
+    let that = this;
+    // var name = that.data.mine.nickname ? that.data.mine.nickname : ''
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '帮您记车位 一键找到爱车位置',
+      path: '/page/home/index',
+
+      success: function (res) {
+        // 转发成功
+        console.log('ok');
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+
+
+  },
 })

@@ -106,6 +106,7 @@ Page({
         parkInfo:res,
         markers: ps
       })
+      this.autopointer();
       
       
       var s = JSON.parse(res.img_list)
